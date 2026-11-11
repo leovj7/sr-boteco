@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sr Boteco | Cardápio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. TELA DE BOAS-VINDAS -->
+  <section id="welcome" class="welcome">
+    <img class="welcome__logo" src="assets/images/logo-sr-boteco.png" alt="Logo do Sr Boteco">
+    <h1 class="welcome__titulo">Bem-vindo ao Sr Boteco!</h1>
+    <span id="welcome-mesa" class="welcome__mesa" hidden></span>
+    <p class="welcome__texto">Explore nossos espetos, porções e bebidas preparados com ingredientes selecionados.</p>
+    <button id="btn-explorar" class="btn">Explorar cardápio →</button>
+  </section>
+
+  <!-- 2. TELA DO CARDÁPIO (começa escondida) -->
+  <div id="cardapio" hidden>
+
+    <header class="topo">
+      <div class="topo__cabecalho">
+        <button id="btn-voltar" class="btn-voltar" type="button">← Início</button>
+      </div>
+
+      <div class="marca">
+        <img class="marca__logo" src="assets/images/logo-sr-boteco.png" alt="Sr Boteco" width="48" height="48" onerror="this.style.display='none'">
+        <span>Sr Boteco</span>
+      </div>
+
+      <section id="destaque" class="destaque" aria-label="Destaque do chefe"></section>
+
+      <div class="busca">
+        <span aria-hidden="true">🔍</span>
+        <input id="busca" type="search" placeholder="Buscar pratos ou bebidas...">
+      </div>
+
+      <section id="combos" class="combos" aria-labelledby="combos-titulo">
+        <div class="combos__cabecalho">
+          <div>
+            <h2 id="combos-titulo" class="combos__titulo">🔥 Combos do Sr Boteco</h2>
+            <p class="combos__sub">Promoções para dividir na mesa</p>
+          </div>
+          <div class="combos__setas">
+            <button id="combos-prev" class="combos__seta" type="button" aria-label="Combo anterior">‹</button>
+            <button id="combos-next" class="combos__seta" type="button" aria-label="Próximo combo">›</button>
+          </div>
+        </div>
+        <div id="combos-trilho" class="combos__trilho"></div>
+      </section>
+
+      <nav id="tabs" class="tabs"></nav>
+    </header>
+
+    <main>
+      <ul id="lista" class="lista"></ul>
+      <p id="vazio" class="vazio" hidden>Nenhum item encontrado.</p>
+    </main>
+
+  </div>
+
+  <!-- Scripts: dados primeiro, lógica depois (um de cada, sem duplicar) -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
