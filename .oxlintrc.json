@@ -1,0 +1,15 @@
+{
+  "env": { "browser": true },
+  "globals": {
+    "categorias": "readonly",
+    "itens": "readonly",
+    "combos": "readonly",
+    "destaque": "readonly"
+  },
+  "overrides": [
+    {
+      "files": ["data.js"],
+      "rules": { "no-unused-vars": "off" }
+    }
+  ]
+}
